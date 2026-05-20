@@ -50,7 +50,7 @@ class RAGPipeline:
     def __init__(self):
         # Local embeddings (no API key needed)
         print("Loading embedding model...")
-        self.embedder = SentenceTransformer("all-MiniLM-L6-v2")
+        self.embedder = SentenceTransformer("paraphrase-MiniLM-L3-v2")
 
         # ChromaDB — persisted locally
        
