@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bankbot-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && python scripts/seed_data.py
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false   # Set in Render dashboard
